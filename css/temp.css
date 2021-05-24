@@ -1,0 +1,56 @@
+a 
+{
+	text-decoration: none; /* Убирает подчеркивание для ссылок */
+	margin-left: 1%;
+	color: black;
+} 
+
+a:hover 
+{ 
+    text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+    color: brown;
+}
+
+#registration
+{
+	position: relative;
+	float: right;
+	top: 25%;
+	margin-right: 1%;
+	width: 20%;
+	display: inline;
+}
+
+form div
+{
+	margin-bottom: 3%;
+}
+
+form div input, select
+{
+	position: relative;
+	float: right;
+	margin-right: 50%;
+}
+
+select
+{
+	width: 30%;
+}
+
+.link {
+	color: black;
+}
+
+.link:hover {
+	color: brown;
+}
+
+table, td, th { 
+	border: 1px outset black;
+	border-spacing: 5px;
+}
+
+table .col1 {
+	visibility: hidden;
+}
