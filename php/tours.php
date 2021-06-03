@@ -24,7 +24,8 @@
 		}
 		
 		function toStr() {
-			return $this->country . " г. " . $this->town . " " . $this->hotel . ' (' . $this->stars . " зв.) " . $this->cost . " у.е."; 
+			return sprintf("%s г. %s %s (%d зв.) %.2f у.е.", $this->country, $this->town, $this->hotel, $this->stars, $this->cost);
+			//return $this->country . " г. " . $this->town . " " . $this->hotel . ' (' . $this->stars . " зв.) " . $this->cost . " у.е."; 
 		}
 	}
 ?>

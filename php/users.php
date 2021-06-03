@@ -17,7 +17,8 @@
 		}
 		
 		function toStr() {
-			return $this->fname . " " . $this->sname . " " . $this->tname; 
+			return sprintf("%s %s %s", $this->fname, $this->sname, $this->tname);
+			//return $this->fname . " " . $this->sname . " " . $this->tname; 
 		}
 	}
 ?>

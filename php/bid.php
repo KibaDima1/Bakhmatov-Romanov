@@ -14,7 +14,8 @@
 		}
 		
 		public function toStr() {
-			return 'Тур: ' . $this->tour_id . ' Клиент: ' . $this->user_id . ' Дата: ' . $this->date_bid;
+			return sprintf('Тур: %s Клиент: %d Дата: %s', $this->tour_id, $this->user_id, $this->date_bid);
+			//return 'Тур: ' . $this->tour_id . ' Клиент: ' . $this->user_id . ' Дата: ' . $this->date_bid;
 		} 
 	}
 ?>

@@ -1,15 +1,17 @@
 <?php
-    require_once '../php/bidDAO.php';
-	require_once '../php/toursDAO.php';
-	require_once '../php/usersDAO.php';
+require_once 'exceptions.php';
+require_once 'bidDAO.php';
+require_once 'toursDAO.php';
+require_once 'usersDAO.php';
 
-    session_start();
+session_start();
 
-    $id = $_GET['id'];
+$id = $_GET['id'];
 
-    switch($_GET['object']) {
+try {
+    switch ($_GET['object']) {
         case 'users':
-            switch($_GET['method']) {
+            switch ($_GET['method']) {
                 case "delete":
                     $res = UsersDAO::delete($id);
                     break;
@@ -18,7 +20,7 @@
             }
             break;
         case 'bids':
-            switch($_GET['method']) {
+            switch ($_GET['method']) {
                 case "delete":
                     $res = BidDAO::delete($id);
                     break;
@@ -27,7 +29,7 @@
             }
             break;
         case 'tours':
-            switch($_GET['method']) {
+            switch ($_GET['method']) {
                 case "delete":
                     $res = ToursDAO::delete($id);
                     break;
@@ -37,6 +39,8 @@
             break;
     }
     header("Location: ../sites/admin.php");
-    if($res == -1)
+    if ($res == -1)
         echo '<script>alert("Не получилось");</script>';
-?>
+} catch (Exception $err) {
+    echo $err->getCode() . ": " . $err->getMessage();
+}
